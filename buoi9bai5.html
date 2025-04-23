@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 5: Slide show ảnh</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+      color: #333;
+    }
+
+    h2 {
+      color: #444;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+
+    .slide {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+      user-select: none;
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 50%;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
+    {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid rgb(130, 54, 54);
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #603131;
+}
+  </style>
+</head>
+<body>
+    <table>
+        <tr>
+          <td id="td1"></td>
+          <td><a href="./buoi9.html">Bai 4</a></td>
+          <td><a href="./buoi9bai5.html">Bai 5</a></td>
+          <td><a href="./buoi9bai6.html">Bai 6</a></td>
+         
+          </tr>
+      </table>
+      
+
+  <h2>Bài 5: Slide show ảnh</h2>
+  <p>Thiết kế giao diện dạng slide show như hình bên, nhấn nút tên bên trái đi chuyển đến ảnh sau nó, nút bên phải để đi chuyển đến ảnh trước nó.</p>
+
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="./anh1.png" alt="Ảnh 1">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/id/1016/600/400" alt="Ảnh 2">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/id/1018/600/400" alt="Ảnh 3">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      const slides = document.getElementsByClassName("slide");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+</body>
+</html>

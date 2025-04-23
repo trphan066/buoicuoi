@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Đăng Ký</title>
+  <style src="myStyle.css"></style>
+  <link rel="stylesheet" href="myStyle.css">
+   
+ 
+</head>
+<table>
+  <tr>
+    <td id="td1"></td>
+    <td><a href="./buoi9.html">Bai 4</a></td>
+    <td><a href="./buoi9bai5.html">Bai 5</a></td>
+    <td><a href="./buoi9bai6.html">Bai 6</a></td>
+    
+    </tr>
+</table>
+
+<body>
+  <div class="form-container">
+    <h2>FORM ĐĂNG KÝ</h2>
+    <form onsubmit="return validateForm();">
+      <label>Họ:
+        <input type="text" id="ho">
+      </label>
+      <label>Tên:
+        <input type="text" id="ten">
+      </label>
+      <label>Ngày sinh:
+        <select id="ngay">
+        </select>
+        <select id="thang">
+    
+        </select>
+        <select id="nam">
+        </select>
+      </label>
+      <label>Giới tính:
+        <span class="gender">
+          <input type="radio" name="gender" value="Nam"> Nam
+          <input type="radio" name="gender" value="Nữ"> Nữ
+        </span>
+      </label>
+      <label>Số điện thoại:
+        <input type="text" id="sdt">
+      </label>
+      <label>Sở thích:
+        <span class="hobbies">
+          <input type="checkbox"> Đọc sách
+          <input type="checkbox"> Xem phim
+          <input type="checkbox"> Nghe nhạc
+          <input type="checkbox"> Đá bóng
+        </span>
+      </label>
+      <label>Khác:
+        <input type="text">
+      </label>
+      <div class="buttons">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+
+  <script src="myScript.js"></script>
+   
+</body>
+</html>

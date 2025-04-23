@@ -1,0 +1,95 @@
+<title>Phép Tính + Đổi Màu</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        .kq {
+            color: red;
+            margin-top: 10px;
+        }
+        .pheptoan {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        .pheptoan input {
+            width: 60px;
+            padding: 4px;
+        }
+        .pheptoan input[readonly] {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+        table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid rgb(130, 54, 54);
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #603131;
+}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+          <td id="td1"></td>
+          <td><a href="./buoi9.html">Bai 4</a></td>
+          <td><a href="./buoi9bai6.html">Bai 5</a></td>
+          <td><a href="./buoi9bai6.html">Bai 6</a></td>
+         
+          </tr>
+      </table>
+
+<h3>6.1 Đổi màu tôi đi:</h3>
+<button onclick="document.body.style.backgroundColor='lightblue'">xanh</button>
+<button onclick="document.body.style.backgroundColor='pink'">hồng</button>
+
+<hr>
+
+<h3>6.2 Thực hiện phép tính và đổi màu</h3>
+
+<div>
+    phép cộng: <input id="a1"> + <input id="b1"> = <input id="r1" readonly><br><br>
+    phép trừ: <input id="a2"> - <input id="b2"> = <input id="r2" readonly><br><br>
+    phép nhân: <input id="a3"> * <input id="b3"> = <input id="r3" readonly><br><br>
+    phép chia: <input id="a4"> / <input id="b4"> = <input id="r4" readonly><br><br>
+    <button onclick="tinhToan()">Thực hiện</button>
+</div>
+
+<h4>Các phép toán vừa thực hiện</h4>
+<div class="kq" id="ketqua"></div>
+
+<script>
+    function tinhToan() {
+        let a1 = +document.getElementById("a1").value;
+        let b1 = +document.getElementById("b1").value;
+        let a2 = +document.getElementById("a2").value;
+        let b2 = +document.getElementById("b2").value;
+        let a3 = +document.getElementById("a3").value;
+        let b3 = +document.getElementById("b3").value;
+        let a4 = +document.getElementById("a4").value;
+        let b4 = +document.getElementById("b4").value;
+
+        document.getElementById("r1").value = a1 + b1;
+        document.getElementById("r2").value = a2 - b2;
+        document.getElementById("r3").value = a3 * b3;
+        document.getElementById("r4").value = b4 !== 0 ? (a4 / b4).toFixed(2) : "Không chia 0";
+
+        document.getElementById("ketqua").innerHTML = `
+            PHÉP CỘNG ${a1}+${b1}=${a1 + b1}<br>
+            PHÉP TRỪ ${a2}-${b2}=${a2 - b2}<br>
+            PHÉP NHÂN ${a3}*${b3}=${a3 * b3}<br>
+            PHÉP CHIA ${a4}/${b4}=${b4 !== 0 ? (a4 / b4).toFixed(2) : "Lỗi"}
+        `;
+    }
+</script>
+
+</body>
+</html>
